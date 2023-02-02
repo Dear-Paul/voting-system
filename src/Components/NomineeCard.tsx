@@ -1,6 +1,6 @@
 
 type NomineeProps = {
-    item: { [key: string]: any };
+    item: { id?: string, tite?: string, photoUrL?:string};
     handleCategorySelection: (e: { [key: string]: any }) => void
     selected?: { [key: string]: any }
 }
@@ -10,7 +10,7 @@ const NomineeCard = ({ item, handleCategorySelection, selected }: NomineeProps) 
 
     return (
         <div className={`nominee-card ${selected?.id === item.id && 'selected'}`}>
-            <h4>{item.title}</h4>
+            <h4>{item.tite}</h4>
             <div className="image">
                 <img src={item.photoUrL} alt='nominee' />
             </div>
